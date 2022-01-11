@@ -897,10 +897,6 @@ have_libsoundio = libsoundio_dep.found ()
 if (have_libsoundio)
   cdata.set('HAVE_LIBSOUNDIO', 1)
 endif
-cyaml_dep = dependency(
-  'libcyaml', version: '>=1.2.0',
-  static: all_static,
-  fallback: ['libcyaml', 'zrythm_cyaml_dep'])
 audec_dep = dependency(
   'audec', version: '>=0.3.2',
   fallback: ['libaudec', 'libaudec_dep'],
@@ -1239,7 +1235,6 @@ zrythm_deps = [
   alsa_dep,
   pulseaudio_dep,
   libsoundio_dep,
-  cyaml_dep,
   audec_dep,
   libcgraph_dep,
   libgvc_dep,
